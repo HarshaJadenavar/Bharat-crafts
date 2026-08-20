@@ -277,48 +277,7 @@
             cursor:pointer;
         }
 
-        .gallery{
-            background:#f5f8f2;
-        }
-
-        .gallery-grid{
-            max-width:1000px;
-            margin:auto;
-            display:grid;
-            grid-template-columns:repeat(3,1fr);
-            gap:20px;
-        }
-
-        .gallery-item{
-            height:220px;
-            position:relative;
-            overflow:hidden;
-            border-radius:10px;
-            cursor:pointer;
-        }
-
-        .gallery-item img{
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            transition:.4s;
-        }
-
-        .gallery-item:hover img{
-            transform:scale(1.1);
-        }
-
-        .gallery-item span{
-            position:absolute;
-            bottom:0;
-            left:0;
-            width:100%;
-            padding:12px;
-            background:#0009;
-            color:white;
-            font-weight:bold;
-        }
-
+       
         .contact{
             background:#f7eee5;
         }
@@ -556,54 +515,7 @@
 
     </section>
 
-    <section class="gallery" id="gallery">
-
-        <div class="title">
-
-            <small>CRAFT GALLERY</small>
-
-            <h2>
-                India's <span>Creative Heritage</span>
-            </h2>
-
-        </div>
-
-        <div class="gallery-grid">
-
-            <div class="gallery-item" onclick="galleryClick('Handmade Pottery')">
-                <img src="image3.jfif" alt="Handmade Pottery">
-                <span>Handmade Pottery</span>
-            </div>
-
-            <div class="gallery-item" onclick="galleryClick('Handloom Art')">
-                <img src="image4.jfif" alt="Handloom Art">
-                <span>Handloom Art</span>
-            </div>
-
-            <div class="gallery-item" onclick="galleryClick('Indian Painting')">
-                <img src="image5.jfif" alt="Indian Painting">
-                <span>Indian Painting</span>
-            </div>
-
-            <div class="gallery-item" onclick="galleryClick('Wooden Art')">
-                <img src="image6.jfif" alt="Wooden Art">
-                <span>Wooden Art</span>
-            </div>
-
-            <div class="gallery-item" onclick="galleryClick('Traditional Jewellery')">
-                <img src="image7.jfif" alt="Traditional Jewellery">
-                <span>Traditional Jewellery</span>
-            </div>
-
-            <div class="gallery-item" onclick="galleryClick('Bamboo Craft')">
-                <img src="image8.jfif" alt="Bamboo Craft">
-                <span>Bamboo Craft</span>
-            </div>
-
-        </div>
-
-    </section>
-
+  
     <section class="contact" id="contact">
 
         <div class="title">
