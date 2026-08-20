@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bharat Crafts | Handmade in India</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family:Arial,sans-serif;
+            background:#fff8ed;
+            color:#1e1712;
+            transition:.3s;
+        }
+
+        nav{
+            position:fixed;
+            top:0;
+            width:100%;
+            z-index:1000;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 7%;
+            background:#ffffff;
+            box-shadow:0 3px 15px #0002;
+        }
+
+        .logo{
+            font-size:25px;
+            font-weight:bold;
+            color:#5c3a21;
+        }
+
+        .logo span{
+            color:#e76f00;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:25px;
+        }
+
+        nav a{
+            text-decoration:none;
+            color:#5c3a21;
+            font-weight:bold;
+        }
+
+        nav a:hover{
+            color:#e76f00;
+        }
+
+        .nav-right{
+            display:flex;
+            align-items:center;
+        }
+
+        #themeBtn{
+            width:40px;
+            height:40px;
+            border:none;
+            border-radius:50%;
+            background:#fff0df;
+            cursor:pointer;
+            font-size:18px;
+        }
+
+        .hero{
+            min-height:100vh;
+            padding:130px 8% 70px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:40px;
+            background:#fff8ed;
+        }
+
+        .hero-text{
+            max-width:600px;
+        }
+
+
+        .hero h1{
+            font-size:70px;
+            line-height:1.05;
+            margin-bottom:20px;
+        }
+
+        .hero h1 span{
+            color:#e76f00;
+        }
+
+        .hero p{
+            font-size:18px;
+            line-height:1.7;
+            color:#6b625b;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            display:inline-block;
+            padding:14px 24px;
+            border-radius:5px;
+            text-decoration:none;
+            font-weight:bold;
+            margin-right:10px;
+            transition:.3s;
+        }
+
+        .primary{
+            background:#e76f00;
+            color:white;
+        }
+
+        .secondary{
+            border:2px solid #5c3a21;
+            color:#5c3a21;
+        }
+
+        .btn:hover{
+            transform:translateY(-4px);
+        }
+
+        .craft-card{
+            width:420px;
+            max-width:100%;
+            padding:20px;
+            border-radius:10px;
+            background:#5c3a21;
+            color:white;
+            box-shadow:0 25px 50px #0004;
+            text-align:center;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-image{
+            width:100%;
+            height:250px;
+            object-fit:cover;
+            border-radius:15px;
+            margin-bottom:20px;
+        }
+
+        .craft-card h2{
+            margin-bottom:15px;
+        }
+
+        .craft-card p{
+            color:#f5d7b4;
+            line-height:1.7;
+        }
+        section{
+            padding:80px 8%;
+        }
+        .title{
+            text-align:center;
+            margin-bottom:45px;
+        }
+
+        .title small{
+            color:#e76f00;
+            font-weight:bold;
+            letter-spacing:2px;
+        }
+
+        .title h2{
+            font-size:40px;
+            margin-top:8px;
+        }
+
+        .title h2 span{
+            color:#138808;
+        }
+
+        .about{
+            background:#fffaf5;
+        }
+
+        .about-box{
+            max-width:950px;
+            margin:auto;
+            display:flex;
+            align-items:center;
+            gap:50px;
+        }
+
+        .about-image{
+            width:350px;
+            height:300px;
+            object-fit:cover;
+            border-radius:5px;
+        }
+
+        .about-text p{
+            color:#6b625b;
+            line-height:1.8;
+            margin-bottom:15px;
+        }
+
+        .crafts{
+            background:#f3ede5;
+        }
+
+        .cards{
+            max-width:1100px;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:22px;
+        }
+
+        .card{
+            background:white;
+            padding:15px;
+            border-radius:10px;
+            text-align:center;
+            box-shadow:0 5px 20px #0001;
+            overflow:hidden;
+            transition:.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-8px);
+            box-shadow:0 15px 30px #0002;
+        }
+
+        .card img{
+            width:100%;
+            height:200px;
+            object-fit:cover;
+            border-radius:10px;
+            margin-bottom:15px;
+        }
+
+        .card h3{
+            margin-bottom:10px;
+            color:#5c3a21;
+        }
+
+        .card p{
+            color:#6b625b;
+            line-height:1.5;
+        }
+
+        .india{
+            text-align:center;
+            background:#e76f00;
+        }
+
+        .india-box{
+            max-width:750px;
+            margin:auto;
+            padding:40px;
+            background:#2b1b10;
+            color:white;
+            border-radius:10px;
+        }
+
+        .india h2{
+            font-size:42px;
+            margin-bottom:15px;
+        }
+
+        .india p{
+            margin-bottom:25px;
+            line-height:1.7;
+        }
+
+        #celebrate{
+            padding:13px 25px;
+            border:none;
+            border-radius:5px;
+            background:#ffffff;
+            color:#5c3a21;
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+        .gallery{
+            background:#f5f8f2;
+        }
+
+        .gallery-grid{
+            max-width:1000px;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:20px;
+        }
+
+        .gallery-item{
+            height:220px;
+            position:relative;
+            overflow:hidden;
+            border-radius:10px;
+            cursor:pointer;
+        }
+
+        .gallery-item img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            transition:.4s;
+        }
+
+        .gallery-item:hover img{
+            transform:scale(1.1);
+        }
+
+        .gallery-item span{
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+            padding:12px;
+            background:#0009;
+            color:white;
+            font-weight:bold;
+        }
+
+        .contact{
+            background:#f7eee5;
+        }
+
+        .form{
+            max-width:600px;
+            margin:auto;
+            padding:30px;
+            background:white;
+            border-radius:15px;
+            box-shadow:0 10px 30px #0001;
+        }
+
+        input,
+        textarea{
+            width:100%;
+            padding:13px;
+            margin-bottom:15px;
+            border:1px solid #d8cfc5;
+            border-radius:7px;
+            outline:none;
+            font-family:Arial;
+        }
+
+        input:focus,
+        textarea:focus{
+            border-color:#e76f00;
+        }
+
+        .form button{
+            width:100%;
+            padding:13px;
+            border:none;
+            border-radius:7px;
+            background:#138808;
+            color:white;
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+        #message{
+            text-align:center;
+            margin-top:15px;
+            font-weight:bold;
+        }
+
+        footer{
+            padding:30px 8%;
+            text-align:center;
+            background:#2b1b10;
+            color:white;
+        }
+
+        footer span{
+            color:#e76f00;
+        }
+
+        @keyframes float{
+            0%,100%{
+                transform: translateY(0px);
+            }
+            50%{
+                transform: translateY(5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <div class="logo">
+            Bharat<span>Crafts</span>
+        </div>
+
+        <ul id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#crafts">Crafts</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <h1>
+                Discover India's
+                <br>
+                <span>Timeless Crafts.</span>
+            </h1>
+
+            <p>
+                Celebrating India's rich heritage by connecting
+                traditional artisans with the modern world.
+            </p>
+
+            <a href="#crafts" class="btn primary">
+                Explore Crafts
+            </a>
+
+            <a href="#about" class="btn secondary">
+                Our Story
+            </a>
+
+        </div>
+
+        <div class="craft-card">
+
+            <img class="hero-image"
+                src="image1.jfif"
+                alt="Indian Handicrafts">
+
+            <h2>Crafted With Pride</h2>
+
+            <p>
+                Preserving India's traditions, empowering local artisans
+                and sharing their creativity.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="about" id="about">
+
+        <div class="title">
+
+            <small>OUR STORY</small>
+
+            <h2>
+                Tradition Meets
+                <span>Creativity</span>
+            </h2>
+
+        </div>
+
+        <div class="about-box">
+
+            <img class="about-image"
+                src="image2.jfif"
+                alt="Indian Artisan">
+
+            <div class="about-text">
+
+                <p>
+                    Bharat Crafts celebrates the incredible diversity
+                    of Indian handicrafts and the skilled artisans
+                    behind every creation.
+                </p>
+
+                <p>
+                    From pottery and handloom textiles to paintings
+                    and wooden art, we bring India's cultural heritage
+                    closer to everyone.
+                </p>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="crafts" id="crafts">
+
+        <div class="title">
+
+            <small>EXPLORE INDIA</small>
+
+            <h2>
+                Our <span>Crafts</span>
+            </h2>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <img src="image3.jfif" alt="Handmade Pottery">
+                <h3>Handmade Pottery</h3>
+                <p>Beautiful traditional pottery crafted by skilled Indian artisans.</p>
+            </div>
+
+            <div class="card">
+                <img src="image4.jfif" alt="Handloom Textiles">
+                <h3>Handloom Textiles</h3>
+                <p>Traditional fabrics woven with care and creativity.</p>
+            </div>
+
+            <div class="card">
+                <img src="image5.jfif" alt="Indian Painting">
+                <h3>Indian Paintings</h3>
+                <p>Colorful artwork inspired by India's rich culture.</p>
+            </div>
+
+            <div class="card">
+                <img src="image6.jfif" alt="Wooden Crafts">
+                <h3>Wooden Crafts</h3>
+                <p>Hand-carved wooden creations made with precision.</p>
+            </div>
+
+            <div class="card">
+                <img src="image7.jfif" alt="Traditional Jewellery">
+                <h3>Traditional Jewellery</h3>
+                <p>Elegant handmade jewellery inspired by Indian traditions.</p>
+            </div>
+
+            <div class="card">
+                <img src="image8.jfif" alt="Bamboo Crafts">
+                <h3>Bamboo Crafts</h3>
+                <p>Eco-friendly handmade products created from natural bamboo.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="india">
+
+        <div class="india-box">
+
+            <h2>🇮🇳 Support Indian Artisans</h2>
+
+            <p>
+                Every purchase supports skilled Indian artisans
+                and helps preserve traditional crafts for
+                future generations.
+            </p>
+
+            <button id="celebrate">
+                Celebrate India 🇮🇳
+            </button>
+
+        </div>
+
+    </section>
+
+    <section class="gallery" id="gallery">
+
+        <div class="title">
+
+            <small>CRAFT GALLERY</small>
+
+            <h2>
+                India's <span>Creative Heritage</span>
+            </h2>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item" onclick="galleryClick('Handmade Pottery')">
+                <img src="image3.jfif" alt="Handmade Pottery">
+                <span>Handmade Pottery</span>
+            </div>
+
+            <div class="gallery-item" onclick="galleryClick('Handloom Art')">
+                <img src="image4.jfif" alt="Handloom Art">
+                <span>Handloom Art</span>
+            </div>
+
+            <div class="gallery-item" onclick="galleryClick('Indian Painting')">
+                <img src="image5.jfif" alt="Indian Painting">
+                <span>Indian Painting</span>
+            </div>
+
+            <div class="gallery-item" onclick="galleryClick('Wooden Art')">
+                <img src="image6.jfif" alt="Wooden Art">
+                <span>Wooden Art</span>
+            </div>
+
+            <div class="gallery-item" onclick="galleryClick('Traditional Jewellery')">
+                <img src="image7.jfif" alt="Traditional Jewellery">
+                <span>Traditional Jewellery</span>
+            </div>
+
+            <div class="gallery-item" onclick="galleryClick('Bamboo Craft')">
+                <img src="image8.jfif" alt="Bamboo Craft">
+                <span>Bamboo Craft</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="contact" id="contact">
+
+        <div class="title">
+
+            <small>GET IN TOUCH</small>
+
+            <h2>
+                Contact <span>Us</span>
+            </h2>
+
+        </div>
+
+        <form class="form" id="contactForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email">
+
+            <textarea
+                id="userMessage"
+                rows="5"
+                placeholder="Your Message"></textarea>
+
+            <button type="submit">
+                Send Message 🇮🇳
+            </button>
+
+            <p id="message"></p>
+
+        </form>
+
+    </section>
+
+    <footer>
+        <p>
+            <span>Bharat Crafts</span>
+            Crafted with Tradition. Made with Pride.
+        </p>
+
+    </footer>
+
+    <script>
+        function galleryClick(craft){
+
+            alert(
+                "🇮🇳 Bharat Crafts\n\nYou selected: " + craft
+            );
+
+        }
+
+        document.getElementById("celebrate").onclick = function(){
+
+            alert(
+                "🇮🇳 HAPPY 80th INDEPENDENCE DAY 🇮🇳\n\n" +
+                "Celebrate India's culture.\n" +
+                "Support Indian artisans!"
+            );
+
+        };
+
+    </script>
+
+</body>
+</html>
